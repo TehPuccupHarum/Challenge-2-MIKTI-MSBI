@@ -7,6 +7,8 @@
 
 package main
 
+import "fmt"
+
 // hitungRataRata adalah func menghitung rata rata dai slice integer.
 func hitungRataRata(scores []int) int {
 	if len(scores) == 0 {
@@ -36,6 +38,9 @@ func main() {
 	lumbaLumba := []int{96, 108, 89}
 	koala := []int{88, 91, 110}
 
+	// hitung skor rata - rata dan menentukan pemenang
+	menang := tentukanPemenang(hitungRataRata(lumbaLumba), hitungRataRata(koala), 100)
+	fmt.Printf("Pemenang kompetisi: %s\n", menang)
 	// Data Bonus
 	bonusData := []struct {
 		LumbaLumba []int
@@ -45,5 +50,4 @@ func main() {
 		{[]int{97, 112, 101}, []int{109, 95, 106}}, //Bonus 2
 	}
 
-	
 }
