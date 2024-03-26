@@ -11,7 +11,7 @@ import "fmt"
 
 // Buat struct untuk menyimpan data berat dan tinggi badan
 type Person struct {
-	Name string
+	Name   string
 	Weight float64 // kg
 	Height float64 // m
 }
@@ -22,7 +22,7 @@ func (p *Person) hitungBMI() float64 {
 }
 
 // Metode untuk membandingkan BMI
-func(p *Person) bandingkanBMI(other *Person) bool {
+func (p *Person) bandingkanBMI(other *Person) bool {
 	return p.hitungBMI() > other.hitungBMI()
 }
 
@@ -40,4 +40,16 @@ func main() {
 	fmt.Printf("BMI %s: %.2f\n", john.Name, john.hitungBMI())
 	fmt.Printf("%s memiliki BMI lebih tinggi dari %s : %t\n \n ", mark.Name, john.Name, markHigherBMI1)
 
+	//data baru untuk data 2
+	mark2 := Person{Name: "Mark", Weight: 95.0, Height: 1.88}
+	john2 := Person{Name: "John", Weight: 85.0, Height: 1.76}
+
+	//hitung dan bandingkan data BMI untuk data 2
+	markHigherBMI2 := mark.bandingkanBMI(&john2)
+
+	//menampilkan hasil data 1
+	fmt.Printf("Data 2:\n")
+	fmt.Printf("BMI %s: %.2f\n", mark2.Name, mark2.hitungBMI())
+	fmt.Printf("BMI %s: %.2f\n", john2.Name, john2.hitungBMI())
+	fmt.Printf("%s memiliki BMI lebih tinggi dari %s : %t\n \n ", mark2.Name, john2.Name, markHigherBMI2)
 }
