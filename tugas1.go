@@ -23,4 +23,13 @@ func main() {
 	// Data Utama
 	lumbaLumba := []int{96, 108, 89}
 	koala := []int{88, 91, 110}
+
+	// Data Bonus
+	bonusData :=[] struct{
+		LumbaLumba []int
+		Koala []int
+	}{
+		{[]int{97,112,101},[]int{109,95,123}}, //Bonus 1
+		{[]int{97,112,101},[]int{109,95,106}}, //Bonus 2
+	}
 }
