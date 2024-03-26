@@ -14,6 +14,16 @@ type Person struct {
 	Height float64 // m
 }
 
+// Metode untuk menghitung BMI
+func (p *Person) hitungBMI() float64 {
+	return p.Weight / (p.Height * p.Height)
+}
+
+// Metode untuk membandingkan BMI
+func(p *Person) bandingkanBMI(other *Person) bool {
+	return p.hitungBMI() > other.hitungBMI()
+}
+
 func main() {
 	// penggunaan data mark dan john menggunakan struct Person
 	mark := Person{Name: "Mark", Weight: 78.0, Height: 1.69}
