@@ -19,17 +19,31 @@ func hitungRataRata(scores []int) int {
 	return total / len(scores)
 }
 
+// tentukanPemenang adalah func menentukan pemenang dari hasil skor rata - rata dan nilai minimum.
+func tentukanPemenang(rataRata1, rataRata2, minScore int) string {
+	if rataRata1 >= minScore && rataRata1 > rataRata2 {
+		return "Lumba - Lumba"
+	} else if rataRata2 >= minScore && rataRata2 > rataRata1 {
+		return "Koala"
+	} else if rataRata1 == rataRata2 && rataRata1 >= minScore {
+		return "Seri"
+	}
+
+}
+
 func main() {
 	// Data Utama
 	lumbaLumba := []int{96, 108, 89}
 	koala := []int{88, 91, 110}
 
 	// Data Bonus
-	bonusData :=[] struct{
+	bonusData := []struct {
 		LumbaLumba []int
-		Koala []int
+		Koala      []int
 	}{
-		{[]int{97,112,101},[]int{109,95,123}}, //Bonus 1
-		{[]int{97,112,101},[]int{109,95,106}}, //Bonus 2
+		{[]int{97, 112, 101}, []int{109, 95, 123}}, //Bonus 1
+		{[]int{97, 112, 101}, []int{109, 95, 106}}, //Bonus 2
 	}
+
+	
 }
