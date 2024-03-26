@@ -7,6 +7,8 @@
 
 package main
 
+import "fmt"
+
 // Buat struct untuk menyimpan data berat dan tinggi badan
 type Person struct {
 	Name string
@@ -28,4 +30,14 @@ func main() {
 	// penggunaan data mark dan john menggunakan struct Person
 	mark := Person{Name: "Mark", Weight: 78.0, Height: 1.69}
 	john := Person{Name: "John", Weight: 92.0, Height: 1.95}
+
+	//hitung  dan bandingkan BMI untuk data 1
+	markHigherBMI1 := mark.bandingkanBMI(&john)
+
+	//menampilkan hasil data 1
+	fmt.Printf("Data 1:\n")
+	fmt.Printf("BMI %s: %.2f\n", mark.Name, mark.hitungBMI())
+	fmt.Printf("BMI %s: %.2f\n", john.Name, john.hitungBMI())
+	fmt.Printf("%s memiliki BMI lebih tinggi dari %s : %t\n \n ", mark.Name, john.Name, markHigherBMI1)
+
 }
