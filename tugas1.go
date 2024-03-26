@@ -7,6 +7,18 @@
 
 package main
 
+// hitungRataRata adalah func menghitung rata rata dai slice integer.
+func hitungRataRata(scores []int) int {
+	if len(scores) == 0 {
+		return 0
+	}
+	total := 0
+	for _, score := range scores {
+		total += score
+	}
+	return total / len(scores)
+}
+
 func main() {
 	// Data Utama
 	lumbaLumba := []int{96, 108, 89}
