@@ -30,7 +30,7 @@ func tentukanPemenang(rataRata1, rataRata2, minScore int) string {
 	} else if rataRata1 == rataRata2 && rataRata1 >= minScore {
 		return "Seri"
 	}
-
+	return "Tidak ada pemenang"
 }
 
 func main() {
@@ -41,6 +41,7 @@ func main() {
 	// hitung skor rata - rata dan menentukan pemenang
 	menang := tentukanPemenang(hitungRataRata(lumbaLumba), hitungRataRata(koala), 100)
 	fmt.Printf("Pemenang kompetisi: %s\n", menang)
+
 	// Data Bonus
 	bonusData := []struct {
 		LumbaLumba []int
@@ -48,6 +49,12 @@ func main() {
 	}{
 		{[]int{97, 112, 101}, []int{109, 95, 123}}, //Bonus 1
 		{[]int{97, 112, 101}, []int{109, 95, 106}}, //Bonus 2
+	}
+
+	for idx, data := range bonusData {
+		// hitugn skor rata - rata dan menentukan pemenang bonus
+		bonusMenang := tentukanPemenang(hitungRataRata(data.LumbaLumba), hitungRataRata(data.Koala), 100)
+		fmt.Printf("pemenang kompetisi (Bonus %d): %s\n", idx+1, bonusMenang)
 	}
 
 }
